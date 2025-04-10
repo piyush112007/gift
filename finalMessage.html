@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Message</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+        text-align: center;
+        color: #ff4d4d;
+      }
+
+      h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 5px #ff9999;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin: 20px;
+        max-width: 600px;
+        color: #ff6666;
+      }
+
+      .heart-buttons {
+        margin-top: 20px;
+      }
+
+      .hidden {
+        display: none; /* Initially hide the element */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Thank You for Playing! ❤️</h1>
+    <p id="previous-paragraph">
+      Congratulations on completing the journey through our memories! Each click
+      unlocked a piece of our beautiful story. I hope you enjoyed this little
+      game. And now you can see the Message I wanted to give you.
+    </p>
+    <p class="hidden" id="hidden-message">
+      I am so grateful to have you in my life. You are my everything, and I
+      can't wait to create more beautiful memories together. I Love you a Lot..
+      Happy 2nd Month Anniversary! 💖💖
+    </p>
+    <div class="heart-buttons">
+      <button
+        class="heart-button red-heart"
+        onclick="revealMessageAndHidePrevious()"
+      >
+        ❤️
+      </button>
+    </div>
+    <script>
+      function revealMessageAndHidePrevious() {
+        alert("Happy 2nd Month Anniversary! 💗💗"); // Show the alert
+        const hiddenMessage = document.getElementById("hidden-message");
+        const previousParagraph = document.getElementById("previous-paragraph");
+        hiddenMessage.style.display = "block"; // Reveal the hidden message
+        previousParagraph.style.display = "none"; // Hide the previous paragraph
+      }
+    </script>
+  </body>
+</html>

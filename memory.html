@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Lane</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .reset-button {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #ff4d4d;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .reset-button:hover {
+        background-color: #ff3333;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="reset-button" onclick="resetMemoryLane()">Start Over</button>
+    <h1>Our Beautiful Memories ❤️</h1>
+    <div class="memory-container">
+      <div class="memory">
+        <div class="memory-pair">
+          <img src="Photos-001 (1)/IMG-20241011-WA0030.jpg" alt="Memory 1" />
+          <img
+            src="Photos-001 (1)/IMG-20241011-WA0034.jpg"
+            alt="Memory 2"
+            onclick="showMemory('memory2')"
+          />
+        </div>
+        <p>
+          This is Where all things started and what a beautiful start of a
+          beautiful journey. It is still the days I adore the most.
+        </p>
+      </div>
+      <div class="memory" style="display: none">
+        <div class="memory-pair">
+          <img
+            src="Photos-001 (1)/Snapchat-2085502112.jpg"
+            alt="Memory 3"
+            onclick="showMemory('memory3')"
+          />
+          <img src="Photos-001 (1)/Snapchat-1426197239.jpg" alt="Memory 4" />
+        </div>
+        <p>
+          This is where things started getting serious for me. I was genuinely
+          thinking about you. Aur Tum sirf bhaav kha rahi thi.
+        </p>
+      </div>
+      <div class="memory" style="display: none">
+        <div class="memory-pair">
+          <img src="Photos-001 (1)/Juhu1.jpg" alt="Memory 5" />
+          <img
+            src="Photos-001 (1)/IMG20250113143653.jpg"
+            alt="Memory 6"
+            onclick="showMemory('memory6')"
+          />
+        </div>
+        <p>
+          This is Where Things actually Started where we both got to know and we
+          both got serious about each other.
+        </p>
+      </div>
+      <div class="memory" style="display: none">
+        <div class="memory-pair">
+          <img src="Photos-001 (1)/Snapchat-528176862.jpg" alt="Memory 7" />
+          <img src="Photos-001 (1)/Snapchat-1371752931.jpg" alt="Memory 8" />
+        </div>
+        <p>
+          These moments were different. Jaha Jagde nahi the par saath me itni
+          closeness nahi thi kyuki dono intezaar kar raha ki kon confess
+          karega... Phir ek chutiye ne kiya confess.
+        </p>
+      </div>
+      <div class="memory" style="display: none">
+        <div class="memory-pair">
+          <img
+            src="Photos-001 (1)/IMG-20250218-WA0020.jpg"
+            alt="Memory 9"
+            onclick="showMemory('memory9')"
+          />
+          <img src="Photos-001 (1)/Snapchat-707662772.jpg" alt="Memory 10" />
+        </div>
+        <p>
+          The first month felt like a honeymoon period. It was all new, and we
+          were figuring out a different side of each other. With Ignite ahead of
+          us, it was just amazing.
+        </p>
+      </div>
+      <div class="memory" style="display: none">
+        <div class="memory-pair">
+          <img src="Photos-001 (1)/IMG-20250402-WA0018.jpg" alt="Memory 11" />
+          <img
+            src="Photos-001 (1)/IMG-20250218-WA0024.jpg"
+            alt="Memory 12"
+            onclick="showMemory('memory12')"
+          />
+        </div>
+        <p>
+          And now here we are, 2nd Month Anniversary. I am so happy to have you
+          in my life. You are the best thing that has ever happened to me. I
+          hope we can make many more beautiful memories together.
+        </p>
+      </div>
+    </div>
+    <div id="memory-modal" style="display: none">
+      <div class="modal-content">
+        <h1 id="modal-title"></h1>
+        <p id="modal-description"></p>
+        <img id="modal-image" src="" alt="" />
+        <button class="next-button" onclick="closeMemory()">Close</button>
+        <button class="next-button" onclick="returnToMemoryLane()">
+          Back to Memory Lane
+        </button>
+      </div>
+    </div>
+    <div class="heart-buttons">
+      <button class="heart-button red-heart" onclick="handleFinalMemory()">
+        ❤️
+      </button>
+      <button class="heart-button green-heart" onclick="resetMemoryLane()">
+        💚
+      </button>
+    </div>
+    <script>
+      const totalMemories = 5; // Total number of memories to unlock
+
+      function handleFinalMemory() {
+        const memories = document.querySelectorAll(".memory");
+        if (currentMemory === memories.length - 1) {
+          if (memoryUnlockCount === totalMemories) {
+            location.href = "finalMessage.html"; // Redirect on the final memory
+          } else {
+            alert("Not all memories were unlocked. You failed! 😢");
+          }
+        } else {
+          nextMemory(currentMemory + 1); // Proceed to the next memory
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

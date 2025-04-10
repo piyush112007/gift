@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Display</title>
+    <link rel="stylesheet" href="imageDisplay.css" />
+  </head>
+  <body>
+    <div id="opening-message" class="opening-message">
+      <h1>Memory Found! 💖</h1>
+    </div>
+    <h1 id="image-title" style="display: none"></h1>
+    <p id="image-description" style="display: none"></p>
+    <img
+      id="image-display"
+      src=""
+      alt=""
+      style="
+        width: 300px;
+        height: 300px;
+        border-radius: 15px;
+        border: 5px solid #ff4d4d;
+        display: none;
+      "
+    />
+    <button
+      class="next-button"
+      onclick="goBack()"
+      style="display: none"
+      id="back-button"
+    >
+      Back to Memory Lane
+    </button>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const title = params.get("title");
+      const description = params.get("description");
+      const image = params.get("image");
+
+      document.getElementById("image-title").textContent = title;
+      document.getElementById("image-description").textContent = description;
+      document.getElementById("image-display").src = image;
+
+      setTimeout(() => {
+        document.getElementById("opening-message").style.display = "none";
+        document.getElementById("image-title").style.display = "block";
+        document.getElementById("image-description").style.display = "block";
+        document.getElementById("image-display").style.display = "block";
+        document.getElementById("back-button").style.display = "block";
+      }, 2000);
+
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>

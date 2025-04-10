@@ -1,0 +1,236 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Disable scrolling on both x and y axes */
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  color: #ff4d4d;
+  font-size: 2.5rem; /* Adjusted for smaller screens */
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px #ff9999;
+}
+
+h2 {
+  color: #ff4d4d;
+  font-size: 1.5rem; /* Adjusted for smaller screens */
+  margin-top: 15px;
+  text-shadow: 1px 1px 3px #ff9999;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+h2:hover {
+  transform: scale(1.05);
+  color: #ff3333;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Reduced gap for smaller screens */
+  margin-top: 20px;
+}
+
+.photos img {
+  width: 150px; /* Adjusted size for smaller screens */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ff4d4d; /* Adjusted border size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+button.next-button {
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 1rem; /* Adjusted font size */
+  padding: 8px 15px; /* Adjusted padding */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.next-button:hover {
+  background-color: #ff3333;
+  transform: scale(1.1);
+}
+
+.memory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.memory img {
+  width: 250px; /* Adjusted size for smaller screens */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 4px solid #ff4d4d; /* Adjusted border size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.memory p {
+  color: #ff4d4d;
+  font-size: 1rem; /* Adjusted font size */
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 30px; /* Adjusted padding */
+}
+
+.heart-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduced gap for smaller screens */
+  margin-top: 10px;
+}
+
+.heart-button {
+  font-size: 1.5rem; /* Adjusted size for smaller screens */
+  border: 2px solid #ff4d4d;
+  background-color: white;
+  color: inherit;
+  border-radius: 50%;
+  width: 50px; /* Adjusted size */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.heart-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.red-heart {
+  color: #ff4d4d;
+}
+
+.green-heart {
+  color: #4caf50;
+}
+
+.memory-pair {
+  display: flex;
+  flex-direction: column; /* Stack images vertically for smaller screens */
+  align-items: center;
+  gap: 15px; /* Reduced gap */
+  margin-bottom: 10px;
+}
+
+.memory-pair img {
+  width: 200px; /* Adjusted size */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 4px solid #ff4d4d; /* Adjusted border size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-pair img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#memory-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 15px; /* Adjusted padding */
+  border-radius: 10px;
+  text-align: center;
+  width: 90%; /* Adjusted width */
+  max-width: 400px; /* Adjusted max width */
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  /* Styles for larger screens */
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .photos img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .memory img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .memory-pair img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .heart-button {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Enable vertical scrolling for phones */
+  html,
+  body {
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+}
