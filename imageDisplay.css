@@ -1,3 +1,6 @@
+*{
+  cursor:pointer;
+}
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
